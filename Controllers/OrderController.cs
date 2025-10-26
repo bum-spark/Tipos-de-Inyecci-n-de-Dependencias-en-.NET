@@ -19,7 +19,7 @@ namespace MyApp.Namespace
             _orderSingleton = orderSingleton;
         }
 
-        [HttpGet("transient/orders")]
+        [HttpGet("transient")]
         public IActionResult obtenerOrdenes()
         {
             return Ok(new
@@ -30,7 +30,7 @@ namespace MyApp.Namespace
             });
         }
 
-        [HttpPost("transient/orders")]
+        [HttpPost("transient")]
         public IActionResult AgregarOrdenTransient([FromBody] Order order)
         {
             _orderTransient.AddOrder(order);
@@ -41,7 +41,7 @@ namespace MyApp.Namespace
             });
         }
 
-        [HttpGet("scoped/orders")]
+        [HttpGet("scoped")]
         public IActionResult ObtenerOrdenesScoped()
         {
             return Ok(new
@@ -52,7 +52,7 @@ namespace MyApp.Namespace
             });
         }
 
-        [HttpPost("scoped/orders")]
+        [HttpPost("scoped")]
         public IActionResult AgregarOrdenScoped([FromBody] Order order)
         {
             _orderScoped.AddOrder(order);
@@ -63,7 +63,7 @@ namespace MyApp.Namespace
             });
         }
 
-        [HttpGet("singleton/orders")]
+        [HttpGet("singleton")]
         public IActionResult ObtenerOrdenesSingleton()
         {
             return Ok(new
@@ -74,7 +74,7 @@ namespace MyApp.Namespace
             });
         }
 
-        [HttpPost("singleton/orders")]
+        [HttpPost("singleton")]
         public IActionResult AgregarOrdenSingleton([FromBody] Order order)
         {
             _orderSingleton.AddOrder(order);
