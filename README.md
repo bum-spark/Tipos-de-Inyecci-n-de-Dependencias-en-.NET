@@ -287,15 +287,15 @@ Basándome en el comportamiento observado en este proyecto, aquí están los cas
 **Casos apropiados:**
 - **Contextos de base de datos:** todas las operaciones CRUD dentro de una misma solicitud usan la misma instancia del contexto
 - **Servicios que necesitan consistencia durante una petición HTTP:** Usuario autenticado, transacciones
-- **Servicios de carrito de compras** mientras el usuario realiza una petición completa (como confirmar una compra), los cálculos y validaciones comparten la misma instancia temporalmente.
+- **Servicios de carrito de compras:** mientras el usuario realiza una petición completa (como confirmar una compra), los cálculos y validaciones comparten la misma instancia temporalmente.
 
 ---
 
 ### **Cuándo usar Singleton**
 
 **Casos apropiados:**
-- **Configuraciones globales::** Settings que no cambian, configuración predefinidas
-- **Estadísticas globales::** Si se desara un aestadística actual de uso de algun lado, podría funcionar
+- **Configuraciones globales:** Settings que no cambian, configuración predefinidas
+- **Estadísticas globales:** Si se desara un aestadística actual de uso de algun lado, podría funcionar
 
 ---
 
@@ -304,22 +304,31 @@ Basándome en el comportamiento observado en este proyecto, aquí están los cas
 ```
 TRANSIENT
 ════════════════════════════════════════════════════════════
+```
 
+<img width="463" height="408" alt="trasient" src="https://github.com/user-attachments/assets/ebcefbad-440a-4c19-aeb7-e9a6e91861ea" />
 
+```
 Los pedidos NO persisten entre llamadas
 
 
 SCOPED 
 ════════════════════════════════════════════════════════════
+```
 
+<img width="491" height="425" alt="scoped" src="https://github.com/user-attachments/assets/cff48593-1b01-49bf-bb24-b615e6b816f2" />
 
+```
 Misma instancia EN la petición, nueva ENTRE peticiones
 
 
 SINGLETON 
 ════════════════════════════════════════════════════════════
+```
 
+<img width="507" height="422" alt="singleton" src="https://github.com/user-attachments/assets/2dc95812-97b6-40f5-8494-2dea82f81add" />
 
+```
 SIEMPRE la misma instancia, TODOS los datos persisten
 ```
 ---
